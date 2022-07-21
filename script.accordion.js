@@ -1,3 +1,4 @@
+<script>
 class Accordion {
   constructor(accordionListQuestions) {
     this.accordionListQuestions = document.querySelectorAll(accordionListQuestions);
@@ -25,3 +26,14 @@ class Accordion {
 
 const accordion = new Accordion(".faq-question");
 accordion.init();
+</script>
+
+
+<script>
+
+   var btn = $("#server .DagPlayOpt");
+btn.click(function() {
+  $('html, body').animate({scrollTop:$("#PlayVideo")}, 'fast');
+});   
+  
+</script>
