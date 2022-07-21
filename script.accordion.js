@@ -25,11 +25,4 @@ class Accordion {
 }
 
 const accordion = new Accordion(".faq-question");
-accordion.init();
-
-/* Scroll to Player */
-
-   var btn = $("#server .DagPlayOpt");
-btn.click(function() {
-  $('html, body').animate({scrollTop:$("#PlayVideo")}, 'fast');
-});   
+accordion.init(); 
