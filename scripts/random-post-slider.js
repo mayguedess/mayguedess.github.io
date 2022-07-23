@@ -1,15 +1,13 @@
 let limitSlider = 10;
+autoSlider = false;
 $.ajax({
-url: location.protocol + '//' + location.hostname +'/feeds/posts/default?orderby=published&alt=json-in-script&max-results=150',
+url: location.protocol + '//' + location.hostname + '/feeds/posts/default?orderby=published&alt=json-in-script&max-results=150',
+type: 'get',
 dataType: 'jsonp',
 success: function(json) {
 let num = 0;
-const key = {};
-for(var i = 0;i<json.feed.entry.length;i++){
-feeds = json.feed.entry[parseInt(Math.random() * json.feed.entry.length)];
-if(key[feeds.id.$t] == null || key[feeds.id.$t] == ''){
-if(num < limitSlider){
-key[feeds.id.$t] = true;
+for(var i = 0;i<limitSlider;i++){
+feeds = json.feed.entry[i];
 const title = feeds.title.$t,
 href = feeds.link[feeds.link.length - 1].href,
 c = feeds.content.$t,
@@ -21,8 +19,7 @@ imgs=-1!=d&&-1!=e&&-1!=f&&""!=g?g:"https://images.bizlaw.id/gbr_artikel/images-2
 thumb = feeds.media$thumbnail != null ? feeds.media$thumbnail.url.replace(/s72-c/,'s500').replace(/s72-w400-h210-c/,'s500') : imgs;
 
 $('#slides').append(`<div class="itemSlider"><div class="dataItem"><div><img loading="lazy" src="${thumb}"  ondragstart="event.preventDefault();"/><div class="num">${num += 1}</div></div><a href="${href}"><div class="ItemsTitle">${title}</div></a></div></div>`);
-}
-}}},
+}},
 error: function() {$('#slides').html('<strong>Error Getting Data!</strong>');}
 });
 
@@ -49,6 +46,17 @@ matchAuto.addEventListener("mouseout", function(){ slide = setInterval(slideShow
 matchAuto.addEventListener("touchend", function(){ slide = setInterval(slideShow, 2000);});
 document.getElementById('right-button').addEventListener('click', function(e) {
   e.preventDefault();
+	
+  if(autoSlider == true){
+var slide = setInterval(slideShow, 2000);
+
+matchAuto.addEventListener("mouseover", function(){ clearInterval(slide)});
+matchAuto.addEventListener("touchstart", function(){ clearInterval(slide)});
+
+matchAuto.addEventListener("mouseout", function(){ slide = setInterval(slideShow, 2000);});
+matchAuto.addEventListener("touchend", function(){ slide = setInterval(slideShow, 2000);});
+};	
+	
   var container = $('.itemSlider').width(),
       matchWidth = scrollContainer.scrollLeft,
       widthMax = scrollContainer.scrollWidth;
