@@ -47,7 +47,7 @@ matchAuto.addEventListener("touchend", function(){ slide = setInterval(slideShow
 document.getElementById('right-button').addEventListener('click', function(e) {
   e.preventDefault();
 	
-  if(autoSlider == true){
+  if(autoSlider = true){
 var slide = setInterval(slideShow, 2000);
 
 matchAuto.addEventListener("mouseover", function(){ clearInterval(slide)});
