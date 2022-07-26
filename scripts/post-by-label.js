@@ -1,8 +1,8 @@
 const postTV={
-run:function(TV,num){
+run:function(Label,num){
 let limitSlider = num;  
 $.ajax({
-url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+TV,
+url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+Label,
 type: 'get',
 data:{orderby: "updated", alt:"json","max-results":num},
 dataType: 'jsonp',
