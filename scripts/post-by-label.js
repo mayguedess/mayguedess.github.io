@@ -24,7 +24,7 @@ thumb = feeds.media$thumbnail != null ? feeds.media$thumbnail.url.replace(/s72-c
 $('#swiper-wrapper').append(`<div class="swiper-slide"><a href="${href}"><img loading="lazy" src="${thumb}" ondragstart="event.preventDefault()"></a></div>`);
 }},
 error: function() {$('#swiper-wrapper').html('<strong>Error Getting Data!</strong>');}
-});
+})
 }
 };        
 </script>
