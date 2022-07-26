@@ -1,5 +1,6 @@
 const postLabel={
 run:function(label,num){
+let limitSlider = num;  
 $.ajax({
 url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+label,
 type: 'get',
