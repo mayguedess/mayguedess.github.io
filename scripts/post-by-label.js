@@ -3,9 +3,9 @@
 const postLabel={
 run:function(label,num){
 $.ajax({
-url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+label?,
+url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+label,
 type: 'get',
-data:{orderby: "updated", alt:"json-in-script","max-results":num},
+data:{orderby: "updated", alt:"json","max-results":num},
 dataType: 'jsonp',
 success: function(json) {
 let num = 0;
