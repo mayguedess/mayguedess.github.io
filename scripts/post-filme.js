@@ -1,4 +1,4 @@
-const postFilme={
+const postFilm={
 run:function(Label,num){
 let limitSlider = num;  
 $.ajax({
