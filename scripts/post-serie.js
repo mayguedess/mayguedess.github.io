@@ -1,5 +1,5 @@
 
-const postSérie={
+const postSerie={
 run:function(Label,num){
 let limitSlider = num;  
 $.ajax({
