@@ -1,5 +1,5 @@
-const postLabel={
-run:function(Label,num,selector){
+const postTV={
+run:function(Label,num){
 let limitSlider = num;  
 $.ajax({
 url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+Label,
@@ -20,9 +20,9 @@ g=c.substr(e+5,f-e-5),
 imgs=-1!=d&&-1!=e&&-1!=f&&""!=g?g:"https://images.bizlaw.id/gbr_artikel/images-2_294.webp",
 thumb = feeds.media$thumbnail != null ? feeds.media$thumbnail.url.replace(/s72-c/,'s500').replace(/s72-w400-h210-c/,'s500') : imgs;
 
-$('selector').append(`<div class="swiper-slide"><a href="${href}"><img loading="lazy" src="${thumb}"></a></div>`);
+$('#tv').append(`<div class="swiper-slide"><a href="${href}"><img loading="lazy" src="${thumb}"></a></div>`);
 }},
-error: function() {$('selector').html('<strong>Error Getting Data!</strong>');}
+error: function() {$('#tv').html('<strong>Error Getting Data!</strong>');}
 });
 }
 };        
