@@ -6,10 +6,10 @@ url: location.protocol + '//' + location.hostname + '/feeds/posts/default/-/'+La
 type: 'get',
 data:{orderby: "updated", alt:"json","max-results":num},
 dataType: 'jsonp',
-success: function(e) {
+success: function(json) {
 let num = 0;
 for(var i = 0;i<limitSlider;i++){
-feeds = e.feed.entry[i];
+feeds = json.feed.entry[i];
 const title = feeds.title.$t,
 href = feeds.link[feeds.link.length - 1].href,
 c = feeds.content.$t,
