@@ -9,7 +9,7 @@ dataType: 'jsonp',
 success: function(e) {
 let num = 0;
 for(var i = 0;i<limitSlider;i++){
-feeds = json.feed.entry[i];
+feeds = e.feed.entry[i];
 const title = feeds.title.$t,
 href = feeds.link[feeds.link.length - 1].href,
 c = feeds.content.$t,
