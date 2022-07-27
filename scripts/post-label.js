@@ -1,5 +1,5 @@
 const postLabel={
-run:function(label,num,selector){
+run:function(label,num){
 $.ajax({
     type:"GET",
     url:location.protocol + '//' + location.hostname +'/feeds/posts/default/-/'+label,
@@ -24,7 +24,7 @@ $.ajax({
     var thumb = feed.media$thumbnail != null ? feed.media$thumbnail.url.replace(/s72-c/,'s500') : imgs;
     
 var structure = '<div class="swiper-slide"><a href="'+ link +'"><img src="'+ thumb +'"/></a></div>';
-$(selector).html(structure);
+$('#TV').html(structure);
    }
      }});
 }
